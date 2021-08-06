@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Organization</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Performer Prizes id</th>
+            <th>Performer Prizes premiation date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prize of prizes">
+            <td>
+                <div #prizeIdView (click)="setPrizeIdAfterIdRowIsClicked(prize.id)">{{prize.id}}</div>
+            </td>
+            <app-table-prizes-detail *ngIf="showDetailPrizes" [prizeIdChild]="prizeIdSource"></app-table-prizes-detail>
+        </tr>
+    </tbody>
+</table>
